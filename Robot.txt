@@ -1,0 +1,45 @@
+public class Robot {
+        int x = 0;
+        int y = 0;
+        String direction;
+
+        void advance(){
+            if (direction == "north"){
+                y += 1; // y ++
+            }
+            else if (direction == "east"){
+                x += 1; // x ++
+            }
+            else if (direction == "south"){
+                y -= 1; // y --
+            }
+            else if (direction == "west"){
+                x -= 1; // y --
+            }
+            System.out.println("The robot is now at position: " + x + "x " + y + "y.");
+        }
+
+        void turn(){
+            if (direction == "north"){
+                direction = "east";
+            }
+            else if (direction == "east"){
+                direction = "south";
+            }
+            else if (direction == "south"){
+                direction = "west";
+            }
+            else if (direction == "west"){
+                direction = "north";
+            }
+            System.out.println("The robot is turned to the: " + direction);
+        }
+
+    public static void main(String[] args) {
+        Robot robot = new Robot();
+        robot.direction = "north";
+        robot.advance();
+        robot.turn();
+        robot.advance();
+    }
+}
